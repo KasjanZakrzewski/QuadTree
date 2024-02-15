@@ -16,16 +16,16 @@ class Quad:
         self.max = max
 
     def split(self):
-        quad = Quad(self.x1, self.x2/2, self.y1, self.y2/2, self.max)
+        quad = Quad(self.x1, (self.x1+self.x2)/2, self.y1, (self.y1+self.y2)/2, self.max)
         self.chidren.append(quad)
 
-        quad = Quad(self.x2/2, self.x2, self.y1, self.y2/2, self.max)
+        quad = Quad((self.x1+self.x2)/2, self.x2, self.y1, (self.y1+self.y2)/2, self.max)
         self.chidren.append(quad)
 
-        quad = Quad(self.x1, self.x2/2, self.y2/2, self.y2, self.max)
+        quad = Quad(self.x1, (self.x1+self.x2)/2, (self.y1+self.y2)/2, self.y2, self.max)
         self.chidren.append(quad)
 
-        quad = Quad(self.x2/2, self.x2, self.y2/2, self.y2, self.max)
+        quad = Quad((self.x1+self.x2)/2, self.x2, (self.y1+self.y2)/2, self.y2, self.max)
         self.chidren.append(quad)
 
     def add_point(self, point):
